@@ -48,17 +48,23 @@
         self.boss.health = self.boss.health - self.character.damage;
         self.character.health = self.character.health - self.boss.damage - self.character.armor.health;
         self.character.damage = self.character.damage - self.character.weapon.damage;
+        [self updateCharacterStatsforArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthChange];
+        [self updateTile];
     }
     else {
         [self updateDirectionButtons];
+        [self updateCharacterStatsforArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthChange];
+        [self updateTile];
+        [self.actionButton setTitle:@"" forState:UIControlStateNormal];
+        [self.actionButton setHidden:YES];
     }
     
-    [self updateCharacterStatsforArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthChange];
-    
-    [self updateTile];
-    
-    [self.actionButton setTitle:@"" forState:UIControlStateNormal];
-    [self.actionButton setHidden:YES];
+//    [self updateCharacterStatsforArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthChange];
+//    
+//    [self updateTile];
+//    
+//    [self.actionButton setTitle:@"" forState:UIControlStateNormal];
+//    [self.actionButton setHidden:YES];
     
     if (self.character.health <= 0){
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Death Message" message:@"Sadly, you have died. You have failed your family! Try again!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];

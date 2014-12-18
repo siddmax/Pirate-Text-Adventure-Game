@@ -19,6 +19,7 @@
 @property (strong, nonatomic) SSBossClass *boss;
 
 //IBOutlets
+@property (strong, nonatomic) IBOutlet UILabel *playerStats;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (strong, nonatomic) IBOutlet UILabel *healthLabel;
 @property (strong, nonatomic) IBOutlet UILabel *damageLabel;

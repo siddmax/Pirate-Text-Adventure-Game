@@ -172,8 +172,8 @@
 {
     SSBossClass *boss = [[SSBossClass alloc]init];
     
-    boss.health = 65;
-    boss.damage = 15;
+    boss.health = 100;
+    boss.damage = 20;
     
     return boss;
 }
